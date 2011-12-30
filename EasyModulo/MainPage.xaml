@@ -28,8 +28,11 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Click" Height="98" HorizontalAlignment="Left" Margin="105,57,0,0" Name="button1" VerticalAlignment="Top" Width="250" Background="#FFD15B74" BorderBrush="#FFFF1414" BorderThickness="7,5" Click="button1_Click" />
-            <TextBlock Height="120" HorizontalAlignment="Left" Margin="51,196,0,0" Name="textBlock1" Text="" VerticalAlignment="Top" Width="361" />
+            <TextBlock Height="107" HorizontalAlignment="Left" Margin="49,428,0,0" Name="result" Text="" VerticalAlignment="Top" Width="369" FontSize="28" TextWrapping="Wrap" />
+            <Button Content="=" Height="73" Margin="160,319,152,0" Name="equal" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Click="equal_Click" FontSize="32" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" BorderThickness="1" />
+            <TextBox Height="70" HorizontalAlignment="Left" Margin="19,60,0,0" Name="number1" Text="" VerticalAlignment="Top" Width="425" />
+            <TextBox Height="70" HorizontalAlignment="Left" Margin="19,237,0,0" Name="number2" Text="" VerticalAlignment="Top" Width="425" />
+            <TextBlock Height="69" HorizontalAlignment="Left" Margin="184,152,0,0" Name="mod" Text="mod" VerticalAlignment="Top" Width="99" TextAlignment="Center" FontSize="36" />
         </Grid>
     </Grid>
  

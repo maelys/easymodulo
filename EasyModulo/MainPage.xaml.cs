@@ -21,11 +21,12 @@ namespace EasyModulo
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void equal_Click(object sender, RoutedEventArgs e)
         {
-            BigInteger n1 = new BigInteger("9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",10);
-            BigInteger n2 = new BigInteger("9999222222222222299999998888888",10);
-            textBlock1.Text = (n1.modPow(1,n2)).ToString();
+            BigInteger n1 = new BigInteger(number1.Text,10);
+            BigInteger n2 = new BigInteger(number2.Text,10);
+            result.Text = n1.modPow(1,n2).ToString();
         }
+   
     }
 }
