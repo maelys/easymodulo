@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,83 +14,181 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
+    <phone:PhoneApplicationPage.Resources>
+        <ControlTemplate x:Key="PhoneDisabledTextBoxTemplate" TargetType="TextBox">
+            <ContentControl x:Name="ContentElement" BorderThickness="0"
+                    HorizontalContentAlignment="Stretch" Margin="{StaticResource PhoneTextBoxInnerMargin}"
+                    Padding="{TemplateBinding Padding}" VerticalContentAlignment="Stretch"/>
+        </ControlTemplate>
+    </phone:PhoneApplicationPage.Resources>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock 
-                x:Name="ApplicationTitle" 
-                Text="EASYMODULO" 
-                Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Modulo" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" />
-        </StackPanel>
+        <!--Pivot Control-->
+    <controls:Pivot Title="EASYMODULO">
+        <!--Pivot item one-->
+        <controls:PivotItem Header="Modulo">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!--TitlePanel contains the name of the application and page title-->
+                <!--<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+<TextBlock x:Name="ApplicationTitle" Text="Pronounceable Password Generator" Style="{StaticResource PhoneTextNormalStyle}"/>
+<TextBlock x:Name="PageTitle" Text="Generate About" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+</StackPanel>-->
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox 
-                Name="number1" 
-                Text="" 
-                Height="70" 
-                HorizontalAlignment="Left" 
-                Margin="19,60,0,0" 
-                VerticalAlignment="Top" 
-                Background="{x:Null}"
-                Foreground="{StaticResource PhoneAccentBrush}"
-                Width="425" FontFamily="Arial" />
-            <Button 
-                Click="equal_Click" 
-                Content="=" 
-                Height="73" 
-                Margin="160,324,152,0" 
-                Name="equal" 
-                VerticalAlignment="Top" 
-                Background="{x:Null}" 
-                FontSize="32" 
-                HorizontalAlignment="Stretch" 
-                HorizontalContentAlignment="Center" 
-                VerticalContentAlignment="Stretch" 
-                BorderThickness="2" />
-            <TextBlock 
-                Name="mod" 
-                Text="mod"
-                Height="69" 
-                HorizontalAlignment="Left" 
-                Margin="184,152,0,0"  
-                VerticalAlignment="Top" 
-                Width="99" 
-                TextAlignment="Center" 
-                FontSize="36" />
-            <TextBox 
-                Name="number2" 
-                Text=""
-                Height="70" 
-                HorizontalAlignment="Left" 
-                Margin="19,237,0,0" 
-                Background="{x:Null}"
-                Foreground="{StaticResource PhoneAccentBrush}"
-                VerticalAlignment="Top" 
-                Width="425" FontFamily="Arial" />
-            <TextBox 
-                Name="result" 
-                Text="Enter a number and a modulo and click the '=' button" 
-                Height="160" 
-                HorizontalAlignment="Left" 
-                Margin="19,423,0,0" 
-                Background="{x:Null}"
-                Foreground="{StaticResource PhoneAccentBrush}"
-                BorderBrush="{x:Null}"
-                VerticalAlignment="Top" 
-                Width="425" 
-                FontSize="28" 
-                TextWrapping="Wrap" />
+                    <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <TextBox 
+                        Name="number1" 
+                        Text="" 
+                        Height="70" 
+                        HorizontalAlignment="Left" 
+                        Margin="6,70,0,0" 
+                        VerticalAlignment="Top" 
+                        Background="{x:Null}"
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        Width="425"
+                        FontFamily="Arial" />
+                    <Button 
+                        Click="equal_Click" 
+                        Content="=" 
+                        Height="73" 
+                        Margin="160,331,152,0" 
+                        Name="equal" 
+                        VerticalAlignment="Top" 
+                        Background="{x:Null}" 
+                        FontSize="32" 
+                        HorizontalAlignment="Stretch" 
+                        HorizontalContentAlignment="Center" 
+                        VerticalContentAlignment="Stretch" 
+                        BorderThickness="3"
+                        BorderBrush="#BFFFFFFF" />
+                    <TextBlock 
+                        Name="mod" 
+                        Text="mod"
+                        Height="69" 
+                        HorizontalAlignment="Left" 
+                        Margin="171,155,0,0"  
+                        VerticalAlignment="Top" 
+                        Width="99" 
+                        TextAlignment="Center" 
+                        FontSize="36" />
+                    <TextBox 
+                        Name="number2" 
+                        Text=""
+                        Height="70" 
+                        HorizontalAlignment="Left" 
+                        Margin="3,233,0,0" 
+                        Background="{x:Null}"
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        VerticalAlignment="Top" 
+                        Width="425" FontFamily="Arial" />
+                    <TextBox 
+                        Name="result" 
+                        Text="Enter a number and a modulo and click the '=' button" 
+                        Height="160" 
+                        HorizontalAlignment="Left" 
+                        Margin="19,423,0,0" 
+                        Background="{x:Null}"
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        BorderBrush="{x:Null}"
+                        VerticalAlignment="Top" 
+                        Width="425" 
+                        FontSize="28" 
+                        TextWrapping="Wrap" />
+                    </Grid>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="Power">
+                <Grid>
+                    <TextBox 
+                        Name="number3" 
+                        Text="" 
+                        Height="70" 
+                        HorizontalAlignment="Left" 
+                        Margin="-2,70,0,0" 
+                        VerticalAlignment="Top" 
+                        Background="{x:Null}"
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        Width="211" FontFamily="Arial" />
+                    <Button 
+                        Click="equal2_Click" 
+                        Content="=" 
+                        Height="73" 
+                        Margin="160,331,152,0" 
+                        Name="equal2" 
+                        VerticalAlignment="Top" 
+                        Background="{x:Null}" 
+                        FontSize="32" 
+                        HorizontalAlignment="Stretch" 
+                        HorizontalContentAlignment="Center" 
+                        VerticalContentAlignment="Stretch" 
+                        BorderThickness="3"
+                        BorderBrush="#BFFFFFFF" />
+                    <TextBlock 
+                        Name="mod2" 
+                        Text="mod"
+                        Height="69" 
+                        HorizontalAlignment="Left" 
+                        Margin="171,155,0,0"  
+                        VerticalAlignment="Top" 
+                        Width="99" 
+                        TextAlignment="Center" 
+                        FontSize="36" />
+                    <TextBox 
+                        Name="number4" 
+                        Text=""
+                        Height="70" 
+                        HorizontalAlignment="Left" 
+                        Margin="3,233,0,0" 
+                        Background="{x:Null}"
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        VerticalAlignment="Top" 
+                        Width="425" FontFamily="Arial" />
+                    <TextBox 
+                        Name="result2" 
+                        Text="Enter a number, the power you want to compute it and a modulo. Then click the '=' button" 
+                        Height="183" 
+                        HorizontalAlignment="Left" 
+                        Margin="19,423,0,0" 
+                        Background="{x:Null}"
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        BorderBrush="{x:Null}"
+                        VerticalAlignment="Top" 
+                        Width="425" 
+                        FontSize="28" 
+                        TextWrapping="Wrap" />
+                    <TextBlock 
+                        FontSize="36" 
+                        Height="69" 
+                        HorizontalAlignment="Left" 
+                        Margin="169,58,0,0" 
+                        Name="textBlock1" 
+                        Text="^" 
+                        TextAlignment="Center" 
+                        VerticalAlignment="Top" 
+                        Width="99" />
+                    <TextBox 
+                        Background="{x:Null}" 
+                        FontFamily="Arial" 
+                        Foreground="{StaticResource PhoneAccentBrush}" 
+                        Height="70" 
+                        HorizontalAlignment="Left" 
+                        Margin="227,43,0,0" 
+                        Name="numberP" 
+                        Text="" 
+                        VerticalAlignment="Top" 
+                        Width="190" />
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
         </Grid>
-    </Grid>
- 
+
     <!--Sample code showing usage of ApplicationBar-->
     <!--<phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">

@@ -42,5 +42,33 @@ namespace EasyModulo
                 }
             }
         }
+
+        private void equal2_Click(object sender, RoutedEventArgs e)
+        {
+            BigInteger n3;
+            BigInteger power;
+            BigInteger n4;
+
+            if (number3.Text == "" || number4.Text == "")
+            {
+                result2.Text = "Please enter a number and a modulo";
+            }
+            else
+            {
+                try
+                {
+                    n3 = new BigInteger(number3.Text, 10);
+                    power = new BigInteger(numberP.Text, 10);
+                    n4 = new BigInteger(number4.Text, 10);
+                    result2.Text = n3.modPow(power,n4).ToString();
+                }
+                catch (System.Exception excep)
+                {
+                    result2.Text = "Please enter numbers";
+
+                }
+            }
+
+        }
     }
 }
