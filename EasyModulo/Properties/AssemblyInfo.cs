@@ -7,11 +7,11 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EasyModulo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Compute modulo with big numbers easily.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("EasyModulo")]
-[assembly: AssemblyCopyright("Copyright ©  2011")]
+[assembly: AssemblyCopyright("Copyright ©  2011 Anaelle Maillard")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -67,7 +67,7 @@
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Stretch" 
                         BorderThickness="3"
-                        BorderBrush="#BFFFFFFF" />
+                        BorderBrush="#E3C7C7C7" />
                     <TextBlock 
                         Name="mod" 
                         Text="mod"
@@ -129,7 +129,7 @@
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Stretch" 
                         BorderThickness="3"
-                        BorderBrush="#BFFFFFFF" />
+                        BorderBrush="#E3C7C7C7" />
                     <TextBlock 
                         Name="mod2" 
                         Text="mod"
